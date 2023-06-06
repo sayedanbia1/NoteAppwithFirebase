@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "588336162086",
+    "project_id": "flutterfirenote-263db",
+    "storage_bucket": "flutterfirenote-263db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588336162086:android:1a142d26fc5ba3fb1ccde7",
+        "android_client_info": {
+          "package_name": "com.example.appnote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588336162086-um8h3esr8lldr20p2cv7sl3546o1qqb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlsjwa8lg8W6IBArrpvRaQEfSuUcpDJYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588336162086-um8h3esr8lldr20p2cv7sl3546o1qqb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588336162086:android:d527e80ffcf4b3c71ccde7",
+        "android_client_info": {
+          "package_name": "com.example.note_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588336162086-um8h3esr8lldr20p2cv7sl3546o1qqb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlsjwa8lg8W6IBArrpvRaQEfSuUcpDJYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588336162086-um8h3esr8lldr20p2cv7sl3546o1qqb1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
