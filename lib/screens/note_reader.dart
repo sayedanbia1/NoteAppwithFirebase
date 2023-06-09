@@ -32,7 +32,7 @@ class _NoteReaderScreenState extends State<NoteReaderScreen> {
           Text(
             widget.doc["creation_date"],style: appstyle.datatitle,),
           SizedBox(
-            height: 8.0,
+            height: 28.0,
           ),
           Text(
             widget.doc["note_content"],
