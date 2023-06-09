@@ -32,22 +32,27 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 15,
             ),
-            StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance.collection("Notes").snapshots(),
-            builder: (context, AsyncSnapshot<QuerySnapshot> snapshot){
-            if (snapshot.connectionState == ConnectionState.waiting){
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            if (snapshot.hasData){
-              return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+            Expanded(
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance.collection("Notes").snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> snapshot){
+              if (snapshot.connectionState == ConnectionState.waiting){
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (snapshot.hasData){
+                return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                ),
+                children: snapshot.data!.docs.map((note)=>notecard((){},note)).toList(),
+                );
+              }
+              return Text("there is no Notes",style:GoogleFonts.nunito(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12) ,);
+              },
               ),
-              children: snapshot.data!.docs.map((note)=>notecard((){},note)).toList(),
-              );
-            }
-            return Text("there is no Notes",style:GoogleFonts.nunito(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 12) ,);
-            },
             )
           ],
         ),
