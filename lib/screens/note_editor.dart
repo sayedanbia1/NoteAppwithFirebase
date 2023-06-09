@@ -14,6 +14,9 @@ class NoteEditorScreen extends StatefulWidget {
 
 class _NoteEditorScreenState extends State<NoteEditorScreen> {
   int color_id=Random().nextInt(appstyle.cardscolor.length);
+  String date =DateTime.now().toString();
+  TextEditingController _titleController = TextEditingController();
+  TextEditingController _mainController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,37 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         elevation: 0.0,
           title: Text("Add New Note"),
       ),
-      
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: _titleController,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Note Title',
+                ),
+                style: appstyle.maintitle,
+              ),
+
+              SizedBox(height: 8.0),
+              Text(date,style: appstyle.datatitle,),
+              SizedBox(height: 8.0),
+
+              TextField(
+                controller: _mainController,
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Note Title',
+                ),
+                style: appstyle.maincontent,
+              ),
+
+            ],
+          ),
+        ),
     );
   }
 }
