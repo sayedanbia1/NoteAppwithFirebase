@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:note_app/widget/note_card.dart';
-import 'styles/App_style.dart';
+import '../styles/App_style.dart';
 
 
 class HomeScreen extends StatefulWidget {
