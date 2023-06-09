@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: snapshot.data!.docs.map((note)=>notecard((){},note)).toList(),
               );
             }
-            return Text("there is no Notes",style:GoogleFonts.nunito(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 12) ,);
+            return Text("there is no Notes",style:GoogleFonts.nunito(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 12) ,);
             },
             )
           ],
