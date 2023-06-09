@@ -57,6 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){},
+        label: Text("add Note"),
+        icon: Icon(Icons.add),
+      ),
     );
   }
 }

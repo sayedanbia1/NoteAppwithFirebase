@@ -27,7 +27,9 @@ import 'package:note_app/styles/App_style.dart';
               height: 8.0,
             ),
             Text(
-              doc["note_content"],style: appstyle.maincontent,),
+              doc["note_content"],
+              style: appstyle.maincontent,
+              overflow: TextOverflow.ellipsis,),
           ],
         ),
       ),
