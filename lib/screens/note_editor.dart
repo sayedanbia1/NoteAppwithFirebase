@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app/styles/App_style.dart';
 
@@ -32,6 +33,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
                 controller: _titleController,
@@ -58,10 +60,23 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
                 ),
                 style: appstyle.maincontent,
               ),
-
             ],
           ),
         ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: appstyle.accentcolor,
+        onPressed: () async{
+        FirebaseFirestore.instance.collection("Notes").add({
+          "note_title":_titleController,
+          "creation_date":date,
+          "note_content":_mainController,
+          "color_id":color_id,
+        }).then((value){
+          print(value.id);
+          Navigator.pop(context);
+        }).catchError((error)=>print("faield to add new Note due to $error"));
+      },child: Icon(Icons.save),
+      ),
     );
   }
 }
