@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:note_app/styles/App_style.dart';
 
 
-
 class NoteEditorScreen extends StatefulWidget {
   const NoteEditorScreen({super.key});
 
@@ -32,6 +31,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
             children: [
               TextField(
                 controller: _titleController,
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Note Title',
