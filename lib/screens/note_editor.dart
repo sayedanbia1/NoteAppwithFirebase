@@ -23,7 +23,11 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         appBar: AppBar(
         backgroundColor:appstyle.cardscolor[color_id],
         elevation: 0.0,
-          title: Text("Add New Note"),
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Center(
+            child: Text("Add New Note",
+              style: TextStyle(color: Colors.black),),
+          ),
       ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
