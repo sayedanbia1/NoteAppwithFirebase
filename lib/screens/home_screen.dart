@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +7,7 @@ import 'package:note_app/screens/note_editor.dart';
 import 'package:note_app/screens/note_reader.dart';
 import 'package:note_app/widget/note_card.dart';
 import '../styles/App_style.dart';
+import 'package:note_app/profile.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -18,8 +20,36 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+          child:  ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(
+                title: const Text('Item 1'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text('about us'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>myapp()),);
+                },
+              ),
+              ListTile(
+                title: const Text('signOut'),
+                onTap: () {
+                  FirebaseAuth.instance.signOut();
+                },
+              ),
+            ],
+          ),
+      ),
       backgroundColor: appstyle.bgcolor,
-
       appBar: AppBar(
         title: Center(child: Text("Note App")),
       ),
@@ -63,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context)=> NoteEditorScreen()));
@@ -70,6 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
         label: Text("add Note"),
         icon: Icon(Icons.add),
       ),
+
     );
   }
 }
