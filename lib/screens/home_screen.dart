@@ -7,7 +7,7 @@ import 'package:note_app/screens/note_editor.dart';
 import 'package:note_app/screens/note_reader.dart';
 import 'package:note_app/widget/note_card.dart';
 import '../styles/App_style.dart';
-import 'package:note_app/profile.dart';
+import 'package:note_app/Authentication/profile.dart';
 
 
 class HomeScreen extends StatefulWidget {

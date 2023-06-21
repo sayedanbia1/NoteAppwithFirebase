@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 class LoginWidget extends StatefulWidget {
   final VoidCallback onClickedSignUp;

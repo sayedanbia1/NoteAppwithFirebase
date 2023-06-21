@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/LoginPage.dart';
+import 'package:note_app/Authentication/LoginPage.dart';
 import 'SignUpWidget.dart';
 
 
