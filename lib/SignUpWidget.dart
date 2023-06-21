@@ -17,6 +17,7 @@ class SignUpWidget extends StatefulWidget {
 }
 
 class _SignUpWidgetState extends State<SignUpWidget> {
+  var email= "aadaffa@gmail.com";
   final formKey= GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -29,6 +30,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   }
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
+
     padding: EdgeInsets.all(16) ,
     child:Form(
       key: formKey,
@@ -44,10 +46,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(labelText: "Email"),
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            validator: (email)=>
-            email != null && EmailValidator.validate(email)
-                ? 'Enter a valid email'
-                : null,
+            // validator: (email)=>
+            // email != null && EmailValidator.validate(email)
+            //     ? 'Enter a valid email'
+            //     : null,
           ),
           SizedBox(height: 4),
           TextFormField(

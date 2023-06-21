@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app/LoginPage.dart';
 import 'Utils.dart';
+import 'VerifyEmailPage.dart';
 import 'screens/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'AuthPage.dart';
@@ -31,7 +32,7 @@ class Home extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
     builder: (context,snapshot){
           if(snapshot.hasData){
-            return HomeScreen();
+            return VerifyEmailPage();
   }else{
             return AutoPag();
   }
