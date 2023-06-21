@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app/styles/App_style.dart';
@@ -67,9 +66,9 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
         backgroundColor: appstyle.accentcolor,
         onPressed: () async{
         FirebaseFirestore.instance.collection("Notes").add({
-          "note_title":_titleController,
+          "note_title":_titleController.text,
           "creation_date":date,
-          "note_content":_mainController,
+          "note_content":_mainController.text,
           "color_id":color_id,
         }).then((value){
           print(value.id);
